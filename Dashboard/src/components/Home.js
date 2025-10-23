@@ -63,7 +63,7 @@ const Home = () => {
       }
       try {
         const { data } = await axios.post(
-          "http://localhost:3005",
+          `${process.config.REACT_API_URL}`,
           {},
           { withCredentials: true }
         );

@@ -1,16 +1,17 @@
 import  React,{useState,useEffect} from "react";
 import axios from 'axios';
 import { VerticalGraph } from "./VerticalGraph";
+import dotenv from 'dotenv';
 // import {holdings} from '../data/data';
 
 const Holdings = () => {
-  
+  dotenv.config();
 
   const [allHoldings,setAllHoldings]=useState([]);
 
   useEffect(()=>
   {
-    axios.get("http://localhost:3005/allHoldings").then((res)=>
+    axios.get(`${process.config.REACT_API_URL}/allHoldings`).then((res)=>
     {
       console.log(res.data);
       setAllHoldings(res.data);

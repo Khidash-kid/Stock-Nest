@@ -33,7 +33,7 @@ const Signup = () =>
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3005/signup",
+        `${process.config.REACT_API_URL}/signup`,
         {
           ...inputValue,
         },
